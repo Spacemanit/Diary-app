@@ -3,8 +3,7 @@ Author: Manit Bisht
 Github: https://github.com/Spacemanit1709
 """
 
-from tkinter import *
-from tkinter.filedialog import askopenfile
+from tkinter import Tk, Text, END, Button
 from tkcalendar import Calendar
 import datetime
 
@@ -17,12 +16,10 @@ y, m, d = aaj.year, aaj.month, aaj.day
 cal = Calendar(root, selectmode = 'day', year = y, month = m, day = d)
 cal.place(x=10, y=10, width=980, height=280) 
 enter = Text(root)
-enter.place(x=10, y=330, width=980, height=290) 
+enter.place(x=10, y=330, width=980, height=290)
 
 
 def reader():	
-	# text = Label(root, text = "")
-	# text.grid(row = 3, column = 1, rowspan = 4, columnspan = 4)
 	file = open(r"dbdiary.txt", "r")
 	contents = str(file.read())
 	d = cal.get_date()
